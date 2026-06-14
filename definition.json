@@ -1,0 +1,93 @@
+{
+  "packageDefinition": {
+    "name": "SystemLogDashboard"
+  },
+  "packageDefinitionVersion": {
+    "id": "system-log-dashboard-pdv-1",
+    "version": "1.0.0",
+    "packageDefinitionId": "SystemLogDashboard",
+    "exportedFileId": null
+  },
+  "packageDefinitionSelections": [
+    {
+      "id": "sel_modulegroup",
+      "api": "application",
+      "modelName": "ModuleGroup",
+      "selected": [
+        { "id": "systemAdministration", "label": "System Administration" }
+      ],
+      "fields": [
+        { "name": "id" },
+        { "name": "name" },
+        { "name": "icon" },
+        { "name": "description" },
+        { "name": "_customFields._externalId" }
+      ],
+      "metadata": {
+        "dataTransform": "$",
+        "viewFields": [
+          { "id": "id", "label": "id" },
+          { "id": "name", "label": "name" }
+        ],
+        "labelField": "name",
+        "insertBefore": [
+          { "modelName": "Module" }
+        ]
+      },
+      "packageDefinitionVersionId": "system-log-dashboard-pdv-1"
+    },
+    {
+      "id": "sel_module",
+      "api": "application",
+      "modelName": "Module",
+      "selected": [
+        { "id": "systemGovernance", "label": "System Governance" }
+      ],
+      "fields": [
+        { "name": "id" },
+        { "name": "name" },
+        { "name": "description" },
+        { "name": "moduleGroupId" },
+        { "name": "_customFields._externalId" }
+      ],
+      "metadata": {
+        "dataTransform": "$",
+        "viewFields": [
+          { "id": "id", "label": "id" },
+          { "id": "name", "label": "name" }
+        ],
+        "labelField": "name",
+        "insertBefore": [
+          { "modelName": "DataModel" }
+        ]
+      },
+      "packageDefinitionVersionId": "system-log-dashboard-pdv-1"
+    },
+    {
+      "id": "sel_datamodel",
+      "api": "application",
+      "modelName": "DataModel",
+      "selected": [
+        { "id": "systemLogEntry", "label": "SystemLogEntry" },
+        { "id": "artifactRiskSummary", "label": "ArtifactRiskSummary" }
+      ],
+      "fields": [
+        { "name": "id" },
+        { "name": "name" },
+        { "name": "description" },
+        { "name": "dataModelKindId" },
+        { "name": "_customFields._externalId" }
+      ],
+      "metadata": {
+        "dataTransform": "$",
+        "viewFields": [
+          { "id": "id", "label": "id" },
+          { "id": "name", "label": "name" },
+          { "id": "description", "label": "description" }
+        ],
+        "labelField": "name"
+      },
+      "packageDefinitionVersionId": "system-log-dashboard-pdv-1"
+    }
+  ]
+}

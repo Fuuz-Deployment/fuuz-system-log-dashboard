@@ -1,0 +1,536 @@
+{
+  "dataModels": [
+    {
+      "header": {
+        "id": "systemLogEntry",
+        "name": "SystemLogEntry",
+        "description": "A platform audit log entry recording user authentication events, data changes, and system activity across all artifact types (screens, flows, models, documents, scripts, APIs).",
+        "dataModelKindId": "reference",
+        "_customFields": { "_externalId": null }
+      },
+      "version": {
+        "id": "systemLogEntry_v1",
+        "number": "1",
+        "dataModelId": "systemLogEntry",
+        "modelDefinition": {
+          "name": "SystemLogEntry",
+          "metadata": {
+            "mfgx": {
+              "module": {
+                "id": "systemGovernance",
+                "group": {
+                  "id": "systemAdministration"
+                }
+              },
+              "exposed": true,
+              "mutable": true,
+              "mutations": {
+                "create": true,
+                "update": true,
+                "del": true
+              },
+              "dataChangeCapture": {
+                "exposed": true,
+                "retentionDays": 3650
+              },
+              "customFields": {
+                "exposed": true
+              },
+              "editor": {
+                "autosort": true
+              },
+              "indices": []
+            },
+            "mongo": {
+              "collection": "systemLogEntry"
+            },
+            "graphql": {
+              "type": "Object"
+            }
+          },
+          "kind": "Reference",
+          "description": "A platform audit log entry recording user authentication events, data changes, and system activity across all artifact types."
+        },
+        "dataModelTypeId": null
+      },
+      "fields": [
+        {
+          "name": "id",
+          "type": "ID!",
+          "description": "Unique identifier",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": { "include": true },
+                "update": { "include": false }
+              },
+              "queries": { "include": true },
+              "where": { "include": true }
+            },
+            "unique": true
+          }
+        },
+        {
+          "name": "artifactType",
+          "type": "String!",
+          "description": "The artifact type affected: screen, dataFlow, dataModel, document, savedScript, savedApi, user",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": { "include": true },
+                "update": { "include": true }
+              },
+              "queries": { "include": true },
+              "where": { "include": true }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "artifactId",
+          "type": "String!",
+          "description": "The id of the artifact that was affected",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": { "include": true },
+                "update": { "include": true }
+              },
+              "queries": { "include": true },
+              "where": { "include": true }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "artifactName",
+          "type": "String",
+          "description": "The display name of the artifact that was affected",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": { "include": true },
+                "update": { "include": true }
+              },
+              "queries": { "include": true },
+              "where": { "include": true }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "operation",
+          "type": "String!",
+          "description": "The operation that occurred: Create, Update, Delete, Authenticate",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": { "include": true },
+                "update": { "include": true }
+              },
+              "queries": { "include": true },
+              "where": { "include": true }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "significance",
+          "type": "String",
+          "description": "Significance classification of the change: Significant or Insignificant",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": { "include": true },
+                "update": { "include": true }
+              },
+              "queries": { "include": true },
+              "where": { "include": true }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "userEmail",
+          "type": "String",
+          "description": "Email address of the user who performed the action",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": { "include": true },
+                "update": { "include": true }
+              },
+              "queries": { "include": true },
+              "where": { "include": true }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "userDomain",
+          "type": "String",
+          "description": "Domain of the user who performed the action (e.g., mfgx.io, fanucamerica.com)",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": { "include": true },
+                "update": { "include": true }
+              },
+              "queries": { "include": true },
+              "where": { "include": true }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "moduleId",
+          "type": "String",
+          "description": "Module the artifact belongs to",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": { "include": true },
+                "update": { "include": true }
+              },
+              "queries": { "include": true },
+              "where": { "include": true }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "riskTier",
+          "type": "String",
+          "description": "Risk tier classification assigned to the artifact: T1 (Critical), T2 (Warning), T3 (Hygiene), or null",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": { "include": true },
+                "update": { "include": true }
+              },
+              "queries": { "include": true },
+              "where": { "include": true }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "riskSignals",
+          "type": "JSON",
+          "description": "JSON object of risk signals and their counts for this artifact (e.g., {noDataPath: 5, themeUnsafe: 3})",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": { "include": true },
+                "update": { "include": true }
+              },
+              "queries": { "include": true },
+              "where": { "include": true }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "occurAt",
+          "type": "DateTime!",
+          "description": "Timestamp when the log event occurred",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": { "include": true },
+                "update": { "include": true }
+              },
+              "queries": { "include": true },
+              "where": { "include": true }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "weekOf",
+          "type": "DateTime",
+          "description": "ISO week start date — used for weekly aggregation in charts",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": { "include": true },
+                "update": { "include": true }
+              },
+              "queries": { "include": true },
+              "where": { "include": true }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "notes",
+          "type": "String",
+          "description": "Optional additional context about the log entry",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": { "include": true },
+                "update": { "include": true }
+              },
+              "queries": { "include": true },
+              "where": { "include": true }
+            },
+            "unique": false
+          }
+        }
+      ]
+    },
+    {
+      "header": {
+        "id": "artifactRiskSummary",
+        "name": "ArtifactRiskSummary",
+        "description": "A point-in-time risk summary for a single artifact — used to populate the risk-bearing tables on the System Log Dashboard tabs.",
+        "dataModelKindId": "reference",
+        "_customFields": { "_externalId": null }
+      },
+      "version": {
+        "id": "artifactRiskSummary_v1",
+        "number": "1",
+        "dataModelId": "artifactRiskSummary",
+        "modelDefinition": {
+          "name": "ArtifactRiskSummary",
+          "metadata": {
+            "mfgx": {
+              "module": {
+                "id": "systemGovernance",
+                "group": {
+                  "id": "systemAdministration"
+                }
+              },
+              "exposed": true,
+              "mutable": true,
+              "mutations": {
+                "create": true,
+                "update": true,
+                "del": true
+              },
+              "dataChangeCapture": {
+                "exposed": true,
+                "retentionDays": 3650
+              },
+              "customFields": {
+                "exposed": true
+              },
+              "editor": {
+                "autosort": true
+              },
+              "indices": []
+            },
+            "mongo": {
+              "collection": "artifactRiskSummary"
+            },
+            "graphql": {
+              "type": "Object"
+            }
+          },
+          "kind": "Reference",
+          "description": "A point-in-time risk summary for a single artifact — used to populate the risk-bearing tables on the System Log Dashboard tabs."
+        },
+        "dataModelTypeId": null
+      },
+      "fields": [
+        {
+          "name": "id",
+          "type": "ID!",
+          "description": "Unique identifier",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": { "include": true },
+                "update": { "include": false }
+              },
+              "queries": { "include": true },
+              "where": { "include": true }
+            },
+            "unique": true
+          }
+        },
+        {
+          "name": "artifactType",
+          "type": "String!",
+          "description": "The artifact type: screen, dataFlow, dataModel, document, savedScript, savedApi",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": { "include": true },
+                "update": { "include": true }
+              },
+              "queries": { "include": true },
+              "where": { "include": true }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "artifactId",
+          "type": "String!",
+          "description": "The id of the artifact",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": { "include": true },
+                "update": { "include": true }
+              },
+              "queries": { "include": true },
+              "where": { "include": true }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "artifactName",
+          "type": "String!",
+          "description": "Display name of the artifact",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": { "include": true },
+                "update": { "include": true }
+              },
+              "queries": { "include": true },
+              "where": { "include": true }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "moduleId",
+          "type": "String",
+          "description": "Module the artifact belongs to",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": { "include": true },
+                "update": { "include": true }
+              },
+              "queries": { "include": true },
+              "where": { "include": true }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "riskTier",
+          "type": "String!",
+          "description": "Risk tier: T1, T2, T3",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": { "include": true },
+                "update": { "include": true }
+              },
+              "queries": { "include": true },
+              "where": { "include": true }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "riskSignals",
+          "type": "JSON",
+          "description": "JSON object of risk signal names and their counts",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": { "include": true },
+                "update": { "include": true }
+              },
+              "queries": { "include": true },
+              "where": { "include": true }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "elementCount",
+          "type": "Int",
+          "description": "Total element count for screens; total node count for flows",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": { "include": true },
+                "update": { "include": true }
+              },
+              "queries": { "include": true },
+              "where": { "include": true }
+            },
+            "unique": false
+          }
+        },
+        {
+          "name": "isActive",
+          "type": "Boolean",
+          "description": "Whether the artifact is currently marked active",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": { "include": true },
+                "update": { "include": true }
+              },
+              "queries": { "include": true },
+              "where": { "include": true }
+            },
+            "unique": false,
+            "defaultValue": true
+          }
+        },
+        {
+          "name": "scannedAt",
+          "type": "DateTime!",
+          "description": "Timestamp when this risk summary was captured",
+          "metadata": {
+            "mfgx": {
+              "mutations": {
+                "create": { "include": true },
+                "update": { "include": true }
+              },
+              "queries": { "include": true },
+              "where": { "include": true }
+            },
+            "unique": false
+          }
+        }
+      ]
+    }
+  ],
+  "screens": [],
+  "dataFlows": [],
+  "dataMappings": [],
+  "documentDesigns": [],
+  "savedTransforms": [],
+  "data": [
+    {
+      "api": "application",
+      "modelName": "ModuleGroup",
+      "payload": [
+        {
+          "id": "systemAdministration",
+          "name": "System Administration",
+          "icon": "shield-check",
+          "description": "Platform health, governance, and observability tools for administrators and developers.",
+          "_customFields": { "_externalId": null }
+        }
+      ],
+      "metadata": {}
+    },
+    {
+      "api": "application",
+      "modelName": "Module",
+      "payload": [
+        {
+          "id": "systemGovernance",
+          "name": "System Governance",
+          "description": "Log entries, risk summaries, and audit data powering the System Log Dashboard.",
+          "moduleGroupId": "systemAdministration",
+          "_customFields": { "_externalId": null }
+        }
+      ],
+      "metadata": {}
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "SystemLogDashboard",
+  "version": "1.0.0",
+  "applicationPublisherId": "fuuz",
+  "enterpriseId": "mfgx",
+  "environmentId": "build",
+  "dependencies": {},
+  "specVersion": "2.0.0",
+  "platformVersion": "0.0.9"
+}
