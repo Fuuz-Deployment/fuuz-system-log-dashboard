@@ -3,8 +3,8 @@
     "name": "SystemLogDashboard"
   },
   "packageDefinitionVersion": {
-    "id": "system-log-dashboard-pdv-2",
-    "version": "1.1.0",
+    "id": "system-log-dashboard-pdv-3",
+    "version": "1.2.0",
     "packageDefinitionId": "SystemLogDashboard",
     "exportedFileId": null
   },
@@ -14,51 +14,230 @@
       "api": "application",
       "modelName": "ModuleGroup",
       "selected": [
-        { "id": "systemAdministration", "label": "System Administration" }
+        {
+          "id": "systemAdministration",
+          "label": "System Administration"
+        }
       ],
       "fields": [
-        { "name": "id" },
-        { "name": "name" },
-        { "name": "icon" },
-        { "name": "description" },
-        { "name": "_customFields._externalId" }
+        {
+          "name": "id"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "icon"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "_customFields._externalId"
+        }
       ],
       "metadata": {
         "dataTransform": "$",
         "viewFields": [
-          { "id": "id", "label": "id" },
-          { "id": "name", "label": "name" }
+          {
+            "id": "id",
+            "label": "id"
+          },
+          {
+            "id": "name",
+            "label": "name"
+          }
         ],
         "labelField": "name",
         "insertBefore": [
-          { "modelName": "Module" }
+          {
+            "modelName": "Module"
+          }
         ]
       },
-      "packageDefinitionVersionId": "system-log-dashboard-pdv-2"
+      "packageDefinitionVersionId": "system-log-dashboard-pdv-3"
     },
     {
       "id": "sel_module",
       "api": "application",
       "modelName": "Module",
       "selected": [
-        { "id": "systemGovernance", "label": "System Governance" }
+        {
+          "id": "systemGovernance",
+          "label": "System Governance"
+        }
       ],
       "fields": [
-        { "name": "id" },
-        { "name": "name" },
-        { "name": "description" },
-        { "name": "moduleGroupId" },
-        { "name": "_customFields._externalId" }
+        {
+          "name": "id"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "moduleGroupId"
+        },
+        {
+          "name": "_customFields._externalId"
+        }
       ],
       "metadata": {
         "dataTransform": "$",
         "viewFields": [
-          { "id": "id", "label": "id" },
-          { "id": "name", "label": "name" }
+          {
+            "id": "id",
+            "label": "id"
+          },
+          {
+            "id": "name",
+            "label": "name"
+          }
+        ],
+        "labelField": "name",
+        "insertBefore": [
+          {
+            "modelName": "DataFlow"
+          },
+          {
+            "modelName": "Screen"
+          }
+        ]
+      },
+      "packageDefinitionVersionId": "system-log-dashboard-pdv-3"
+    },
+    {
+      "id": "sel_dataflow",
+      "api": "application",
+      "modelName": "DataFlow",
+      "selected": [
+        {
+          "id": "sysLogBackendFlow",
+          "label": "SysLogBackendFlow"
+        }
+      ],
+      "fields": [
+        {
+          "name": "id"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "active"
+        },
+        {
+          "name": "substitutesDataFlowId"
+        },
+        {
+          "name": "dataFlowTypeId"
+        },
+        {
+          "name": "logLevelId"
+        },
+        {
+          "name": "mcpToolConfiguration.enabled"
+        },
+        {
+          "name": "mcpToolConfiguration.inputSchema"
+        },
+        {
+          "name": "mcpToolConfiguration.outputSchema"
+        },
+        {
+          "name": "mcpToolConfiguration.readOnly"
+        },
+        {
+          "name": "mcpToolConfiguration.destructive"
+        },
+        {
+          "name": "mcpToolConfiguration.idempotent"
+        },
+        {
+          "name": "moduleId"
+        },
+        {
+          "name": "_customFields._externalId"
+        }
+      ],
+      "metadata": {
+        "dataTransform": "$",
+        "viewFields": [
+          {
+            "id": "id",
+            "label": "id"
+          },
+          {
+            "id": "name",
+            "label": "name"
+          }
         ],
         "labelField": "name"
       },
-      "packageDefinitionVersionId": "system-log-dashboard-pdv-2"
+      "packageDefinitionVersionId": "system-log-dashboard-pdv-3"
+    },
+    {
+      "id": "sel_screen",
+      "api": "application",
+      "modelName": "Screen",
+      "selected": [
+        {
+          "id": "systemLogDashboard",
+          "label": "System Log Dashboard"
+        }
+      ],
+      "fields": [
+        {
+          "name": "id"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "active"
+        },
+        {
+          "name": "edgeScreen"
+        },
+        {
+          "name": "forceFullscreen"
+        },
+        {
+          "name": "moduleId"
+        },
+        {
+          "name": "substitutesScreenId"
+        },
+        {
+          "name": "isWidget"
+        },
+        {
+          "name": "_customFields._externalId"
+        }
+      ],
+      "metadata": {
+        "dataTransform": "$",
+        "viewFields": [
+          {
+            "id": "id",
+            "label": "id"
+          },
+          {
+            "id": "name",
+            "label": "name"
+          }
+        ],
+        "labelField": "name"
+      },
+      "packageDefinitionVersionId": "system-log-dashboard-pdv-3"
     }
   ]
 }
