@@ -238,6 +238,103 @@
         "labelField": "name"
       },
       "packageDefinitionVersionId": "system-log-dashboard-pdv-3"
+    },
+    {
+      "id": "sel_savedquery_sld",
+      "api": "application",
+      "modelName": "SavedQuery",
+      "selected": [
+        {
+          "id": "dataFlowKpiQuery",
+          "label": "DataFlowKPIQuery"
+        },
+        {
+          "id": "dataModelKpiQuery",
+          "label": "DataModelKPIQuery"
+        },
+        {
+          "id": "documentDesignKpiQuery",
+          "label": "DocumentDesignKPIQuery"
+        },
+        {
+          "id": "enterpriseQuery",
+          "label": "Enterprise Query"
+        },
+        {
+          "id": "getDataModelsByType",
+          "label": "GetDataModelsByType"
+        },
+        {
+          "id": "getUserAuthEventsAggByWeek",
+          "label": "GetUserAuthEventsAggByWeek"
+        },
+        {
+          "id": "savedQueryKpiQuery",
+          "label": "SavedQueryKPIQuery"
+        },
+        {
+          "id": "savedScriptKpiQuery",
+          "label": "SavedScriptKPIQuery"
+        },
+        {
+          "id": "screenDevelopmentKpiQuery",
+          "label": "ScreenDevelopmentKPIQuery"
+        },
+        {
+          "id": "screenElementKpiQuery",
+          "label": "ScreenElementKPIQuery"
+        }
+      ],
+      "fields": [
+        {
+          "name": "id"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "description"
+        },
+        {
+          "name": "queryText"
+        },
+        {
+          "name": "savedQueryParameters.name"
+        },
+        {
+          "name": "savedQueryParameters.typeName"
+        },
+        {
+          "name": "savedQueryParameters.required"
+        },
+        {
+          "name": "savedQueryParameters.list"
+        },
+        {
+          "name": "savedQueryParameters.defaultValue"
+        },
+        {
+          "name": "sampleVariables"
+        },
+        {
+          "name": "_customFields._externalId"
+        }
+      ],
+      "metadata": {
+        "dataTransform": "$",
+        "viewFields": [
+          {
+            "id": "id",
+            "label": "id"
+          },
+          {
+            "id": "name",
+            "label": "name"
+          }
+        ],
+        "labelField": "name"
+      },
+      "packageDefinitionVersionId": "system-log-dashboard-pdv-3"
     }
   ]
 }
